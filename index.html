@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENSEÑAME — El mundo es tu aula</title>
+<meta name="description" content="Encuentra tutores por materia, compara perfiles y agenda tu clase. Descarga el piloto de ENSEÑAME para Android.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1670DC;
+    --blue-soft: #E8F1FC;
+    --ink: #14243A;
+    --muted: #5B6778;
+    --line: #E3E8EF;
+    --bg: #F6F8FB;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "DM Sans", "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.5; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header { background: var(--card); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; letter-spacing: .5px; color: var(--blue); text-decoration: none; }
+  .brand img { width: 36px; height: 36px; }
+  .nav-cta { font-weight: 500; text-decoration: none; padding: 9px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+
+  .hero { padding: 64px 0 40px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--blue); font-weight: 500; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
+  .eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--blue); }
+  h1 { font-size: clamp(36px, 5.5vw, 58px); line-height: 1.05; margin: 18px 0 18px; letter-spacing: -1px; }
+  h1 span { color: var(--blue); }
+  .lead { font-size: 19px; color: var(--muted); max-width: 520px; margin: 0 0 28px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 700; font-size: 17px; padding: 15px 24px; border-radius: 14px; }
+  .btn:hover { filter: brightness(1.08); }
+  .btn svg { width: 20px; height: 20px; }
+  .note { font-size: 14px; color: var(--muted); }
+  .phones { position: relative; display: flex; justify-content: center; }
+  .phone { width: 250px; border-radius: 32px; border: 8px solid #101A2A; background: #101A2A; box-shadow: 0 30px 60px rgba(20, 36, 58, .18); overflow: hidden; }
+  .phone img { display: block; width: 100%; }
+  .phone.back { position: absolute; left: 50%; top: 40px; transform: translateX(5%) rotate(6deg); width: 220px; opacity: .95; }
+  .phone.front { position: relative; transform: translateX(-28%) rotate(-3deg); z-index: 1; }
+
+  section { padding: 56px 0; }
+  h2 { font-size: clamp(26px, 3.5vw, 36px); margin: 0 0 10px; letter-spacing: -.5px; }
+  .sub { color: var(--muted); margin: 0 0 32px; font-size: 17px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+  .card .n { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); font-weight: 700; margin-bottom: 14px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); }
+
+  .install { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .install ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; font-size: 17px; }
+  .install .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .pilot { background: var(--blue-soft); border-radius: 18px; padding: 24px; }
+  .pilot h3 { margin: 0 0 8px; color: var(--blue); }
+  .pilot p { margin: 0 0 10px; }
+  .pilot p:last-child { margin: 0; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 820px) {
+    .hero { padding-top: 40px; }
+    .hero .wrap, .install .cols { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+    .phones { margin-top: 12px; }
+    .phone { width: 210px; }
+    .phone.back { width: 180px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="logo-mark.png" alt="">ENSEÑAME</a>
+    <a class="nav-cta" href="#instalar">Descargar</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">El mundo es tu aula</div>
+        <h1>Aprende de alguien.<br><span>Llega a cualquier lugar.</span></h1>
+        <p class="lead">Encuentra tutores por materia, compara su experiencia, precio y disponibilidad, y agenda tu clase desde el teléfono.</p>
+        <div class="actions">
+          <a class="btn" href="ensename.apk" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>
+            Descargar para Android
+          </a>
+          <span class="note">Versión piloto · APK de unos 70 MB</span>
+        </div>
+      </div>
+      <div class="phones" aria-hidden="true">
+        <div class="phone front"><img src="pantalla-descubrir.png" alt=""></div>
+        <div class="phone back"><img src="pantalla-docente.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Cómo funciona</h2>
+      <p class="sub">Conectamos a quien quiere aprender con quien sabe enseñar, sin depender de recomendaciones sueltas.</p>
+      <div class="grid">
+        <div class="card"><div class="n">1</div><h3>Descubre</h3><p>Busca por materia o idea y compara perfiles, especialidad, idiomas y precio.</p></div>
+        <div class="card"><div class="n">2</div><h3>Agenda</h3><p>Elige un horario libre del tutor y cuéntale qué quieres lograr en la clase.</p></div>
+        <div class="card"><div class="n">3</div><h3>Avanza</h3><p>Habla con tu tutor, sigue tus clases y mira tu progreso en un solo lugar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="install" id="instalar">
+    <div class="wrap cols">
+      <div>
+        <h2>Instálala en tu Android</h2>
+        <p class="sub">Todavía no está en Google Play, así que se instala directamente.</p>
+        <ol>
+          <li>Pulsa <a href="ensename.apk" download><strong>Descargar para Android</strong></a> desde tu teléfono.</li>
+          <li>Abre el archivo <strong>ensename.apk</strong> cuando termine la descarga.</li>
+          <li>Si Android lo pide, permite <strong>instalar apps de esta fuente</strong>.</li>
+          <li>Pulsa <strong>Instalar</strong> y abre ENSEÑAME.</li>
+          <li>Entra con la cuenta de prueba que te dio el equipo.</li>
+        </ol>
+      </div>
+      <div class="pilot">
+        <h3>Esto es un piloto</h3>
+        <p>Queremos saber si ENSEÑAME te ayuda a encontrar al tutor correcto. Los perfiles que verás son de muestra.</p>
+        <p>Por ahora no hay cobros, y la primera carga puede tardar hasta un minuto mientras el servidor despierta.</p>
+        <p>Por ahora no hay registro abierto: usa la cuenta de prueba que te compartió el equipo.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ENSEÑAME · República Dominicana</span>
+    <span>Versión piloto para pruebas</span>
+  </div>
+</footer>
+</body>
+</html>
