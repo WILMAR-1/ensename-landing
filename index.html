@@ -40,6 +40,8 @@
   .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 700; font-size: 17px; padding: 15px 24px; border-radius: 14px; }
   .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: var(--card); color: var(--blue); border: 1px solid var(--line); }
+  .actions + .note { margin: 14px 0 0; }
   .btn svg { width: 20px; height: 20px; }
   .note { font-size: 14px; color: var(--muted); }
   .phones { position: relative; display: flex; justify-content: center; }
@@ -98,8 +100,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>
             Descargar para Android
           </a>
-          <span class="note">Versión piloto · APK de unos 70 MB</span>
+          <a class="btn ghost" href="https://ensename-estudiantes.onrender.com/">Usar en la web</a>
         </div>
+        <p class="note">Versión piloto · APK de unos 70 MB · ¿Enseñas? <a href="https://ensename-docentes.onrender.com/">Entra al estudio docente</a></p>
       </div>
       <div class="phones" aria-hidden="true">
         <div class="phone front"><img src="pantalla-descubrir.png" alt=""></div>
@@ -137,7 +140,8 @@
         <h3>Esto es un piloto</h3>
         <p>Queremos saber si ENSEÑAME te ayuda a encontrar al tutor correcto. Los perfiles que verás son de muestra.</p>
         <p>Por ahora no hay cobros, y la primera carga puede tardar hasta un minuto mientras el servidor despierta.</p>
-        <p>Por ahora no hay registro abierto: usa la cuenta de prueba que te compartió el equipo.</p>
+        <p>Puedes crear tu cuenta en la app o usar la cuenta de prueba que te compartió el equipo.</p>
+        <p>¿Prefieres no instalar nada? Usa <a href="https://ensename-estudiantes.onrender.com/">la versión web para estudiantes</a> o <a href="https://ensename-docentes.onrender.com/">el estudio docente</a>.</p>
       </div>
     </div>
   </section>
